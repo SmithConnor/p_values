@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>p-values : (mis)use and (mis)interpretation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Connor Smith" />
+    <meta name="date" content="2022-02-14" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# p-values : (mis)use and (mis)interpretation
+### Connor Smith
+### 2022-02-14
+
+---
+
+
+background-image: url(https://raw.githubusercontent.com/zonination/perceptions/master/plot1.png)
+background-size: contain
+
+---
+
+# Hypothesis Testing
+
+A statistical hypothesis test is a test to determine a possible conclusion between two different hypotheses.
+
+`$$H_{0}: \text{Null Hypothesis}$$`
+`$$H_{1}: \text{Alternative Hypothesis}$$`
+
+The hypothesis test can be used to produce a p-value.
+
+--
+
+A p-value is the probability of obtaining results which equal to or are more extreme than the observed results (Under the assumption that the null hypothesis is correct `\(H_{0}\)`). `$$Pr(X \ge x | H_{0}).$$`
+
+---
+
+# Common thought process i.e. Scientific Method
+
+The logic behind scientific process is quite straight forward.
+
+--
+
+- Observe some kind of phenomenon. (A causes B)
+--
+
+- Generate a hypothesis to describe the mechanism behind the phenomenon. (What links A and B?)
+--
+
+- Collect data. (Information about A and B)
+--
+
+- Analyze the data. (Find whether there is evidence for a link between A and B)
+--
+
+
+Unfortunately, the use and interpretation of p-values causes many problems.
+
+---
+class: inverse, center, middle
+
+# (Mis)use of p-values
+
+---
+
+background-image: url(https://miro.medium.com/max/684/1*vkFPPZsfAmS7RF0j87Vtrg.png)
+background-size: contain
+
+---
+
+
+
+# p-hacking
+
+The misuse of data analysis to find statistically significant results.
+
+- 
+
+Example: [https://www.tylervigen.com/spurious-correlations](https://www.tylervigen.com/spurious-correlations)
+
+--
+
+# Reasons not to p-hack
+
+- All results are important.
+
+- Creates an idealized view of analysis i.e. you will always be correct.
+
+# How not to p-hack
+
+- Preregistration of a study.
+--
+
+- Avoid continuous observation.
+--
+
+- Correct for multiple testing.
+---
+
+# HARKing
+
+
+
+### Hypothesising after the results are known.
+
+
+--
+
+This terminology is based more in psychology but conveys the same message.
+
+--
+
+- Include post hoc hypotheses as if they were asked at the start.
+
+- Excluding initial hypotheses that did not fit the desired result.
+
+--
+
+### Why is is bad?
+
+--
+
+- Results are always confirmed.
+
+--
+
+- Prevents knowledge of results that already have evidence that does not support the hypothesis.
+
+--
+
+- Results are not reproducible.
+
+--
+
+- Results are not generalisable to the population of interest.
+
+---
+
+# The world is black and white
+
+The results were “plain as day”, recalls Motyl, a psychology PhD student at the University of Virginia in Charlottesville. Data from a study of nearly 2,000 people seemed to show that political moderates saw shades of grey more accurately than did either left-wing or right-wing extremists. “The hypothesis was sexy,” he says, “and the data provided clear support.” The P value, a common index for the strength of evidence, was 0.01 — usually interpreted as 'very significant'. Publication in a high-impact journal seemed within Motyl's grasp.
+
+
+
+But then reality intervened. Sensitive to controversies over reproducibility, Motyl and his adviser, Brian Nosek, decided to replicate the study......
+
+
+Extract: Nuzzo, R. Scientific method: Statistical errors. Nature 506, 150–152 (2014).
+---
+
+class: inverse, center, middle
+
+# (Mis)interpretation of p-values
+
+---
+
+# Knowledge Test
+
+Which of the following statements are incorrect?
+
+- When `\(\textbf{p = 0.14}\)` there is a `\(\textbf{0.14}\)` probability that `\(H_{0}\)` (the Null Hypothesis) is true.
+
+--
+
+- When `\(\textbf{p = 0.14}\)` there is a `\(1 - 0.14 = \textbf{0.86}\)` probability that `\(H_{1}\)` (the Alternative Hypothesis) is true.
+
+--
+
+- A p-value of `\(\textbf{p = 0.07}\)` means there is no effect or relationship present ( `\(\alpha = 0.05\)` ).
+
+--
+
+- A p-value of `\(\textbf{p = 0.04}\)` means there is definitely an important scientific reason for the result ( `\(\alpha = 0.05\)` ).
+
+---
+
+# Solution
+
+- When `\(\textbf{p = 0.14}\)` there is a `\(\textbf{0.14}\)` probability that `\(H_{0}\)` (the Null Hypothesis) is true.
+- When `\(\textbf{p = 0.14}\)` there is a `\(1 - 0.14 = \textbf{0.86}\)` probability that `\(H_{1}\)` (the Alternative Hypothesis) is true.
+
+A p-value does not prove that something is true.
+
+--
+
+- A p-value of `\(\textbf{p = 0.07}\)` means there is no effect or relationship present ( `\(\alpha = 0.05\)` ).
+
+There is a difference between something being 'statistically significant' and there being 'no relationship' for a certain effect.
+
+--
+
+- A p-value of `\(\textbf{p = 0.04}\)` means there is definitely an important scientific reason for the result ( `\(\alpha = 0.05\)` ).
+
+Random noise in the data can cause statistical significance i.e. a false positive can occur.
+
+---
+class: inverse, center, middle
+
+# Common mistakes
+
+---
+
+# The p-value is the probability that the null hypothesis is true.
+
+- Are we able to prove whether a statement is true?
+
+Just because a p-value does not provide evidence against the null hypothesis, this does not mean the hypothesis is true.
+
+This remains true for the alternative hypothesis and proving results are false (i.e. a p-value does not show any of this).
+
+---
+
+# The p-value is  the probability that the observed effects were produced by random chance.
+
+- Are we working under the assumption of random chance?
+
+- What does the p-value show the relationship between?
+
+--
+
+We are working under the assumption that the null hypothesis is true.
+
+So a p-value shows the relationship between the data and the null hypothesis.
+
+---
+
+# The 0.05 significance level is an indicator of scientific importance.
+
+- What value should we choose `\(\alpha\)` to be?
+
+- Does this value imply scientific reason?
+
+--
+
+Although `\(\alpha = 0.05\)` is common practice, this value does not provide any scientific reasoning behind the result. 
+
+If you are after scientific reasoning, more evidence should be collected to verify the result (see earlier example).
+
+---
+
+# The p-value indicates the size or importance of the observed effect.
+
+- Does a small p-value mean an important effect?
+
+--
+
+No, with a larger sample size we require a smaller effect to produce a significant p-value.
+
+More data means more tests. This will then lead to an increased probability of mistakes occuring.
+
+---
+
+# Summary
+
+- 'Statistically significant' does not mean important.
+
+Something as small as recovering from illness 6 minutes faster may be 'statistically significant'.
+
+- A p-value is only part of the process.
+
+A p-value cannot prove if something is true or false.
+
+- The larger the data, the more likely you are to find at least some results which provide `\(p \leq 0.05\)`.
+
+Multiple tests increase the chance of errors.
+
+
+## Once created, p-value errors may be hard to identify!
+
+
+---
+
+# Further Reading
+
+-  Head ML, Holman L, Lanfear R, Kahn AT, Jennions MD (2015) The Extent and Consequences of P-Hacking in Science. PLOS Biology 13(3): e1002106.
+
+- Baker, M. Statisticians issue warning over misuse of P values. Nature 531, 151 (2016). https://doi.org/10.1038/nature.2016.19503
+
+- Kim J, Bang H. Three common misuses of P values. Dent Hypotheses. 2016;7(3):73-80. doi:10.4103/2155-8213.190481
+
+
+Image credit (Slide 2/19): [https://github.com/zonination/perceptions](https://raw.githubusercontent.com/zonination/perceptions/master/plot1.png)
+
+Image credit (Slide 6/19): [https://www.smbc-comics.com/comic/p-2](https://www.smbc-comics.com/comic/p-2)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
